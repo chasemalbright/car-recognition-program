@@ -1,2 +1,11 @@
-# Tesla-car-recognition-program
+# car-recognition-program
 Two integrated python scripts, one for the training of the program, one that actually does the image recognition
+
+overview:
+Tesla inc. has a car production facility in Fremont California. Teslas in the US are produced and shipped exclusively out of this facility. In the last couple years, Tesla's stock price has been very volatile; often fluctuating more than 5 percentage points per day. This has caused Tesla to be the talk of Wallstreet. A cheap and legal way to keep up with Elon's antics was to monitor how many cars Tesla was actually producing. A camera was put outside of the Fremont facility that I worked for to video the exits of the facility to capture the number of cars being shipped out. However, 168 hours of video footage a week is a lot of video to go through. This program was written to efficiently capture only the images in the video with Teslas present.
+
+The first script is the training program which uses some common machine learning libraries such as pandas and keras. over the course of a month, we created a library of true positives (images with the cars we wanted). This file contained thousands of images of tesla cars be shipped out. Since the customers needed only the best most accurate data, we trained the program for a coupple months to 99% accuracy. In this program, we trained the program with these images and the program created and stored the model in a new file. This file conatined all the data of the program's 'idea' of a correct car. Without getting to technical, basically the program found similarities between all these photos (symmetry, color, contrast, size ratios) and created an idea of what a car would look like.
+
+The second script is the full program which uses the model to analyze raw data coming from the cameras day to day. This program would take in the daily image files and compare them to it's model. Images that were considered positives, were saved to a file and then emailed to the analysts. This program fromatted the data file into and HTML styled email and sent to whoever was recording the data. 
+
+This program is great example of how code can be used to increase efficiency. After all it is easier to flip through 200 images rather than 86,000.
